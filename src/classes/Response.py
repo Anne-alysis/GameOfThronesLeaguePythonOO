@@ -1,0 +1,19 @@
+class Response:
+    def __init__(self, team: str, question_number: str, response: str):
+        self.team = team
+        self.question_number = question_number
+        self.response = response
+        self.is_correct = None
+        self.score = 0
+
+    def set_is_correct(self, correct_answer: str, points: int):
+        self.is_correct = self.response in correct_answer
+        self.score = self.is_correct * points
+        return None
+
+    def __str__(self):
+        base_string = f"{self.team}'s response for question {self.question_number}: {self.response}"
+        if self.is_correct is None:
+            return base_string
+        if self.is_correct is not None:
+            return f"{base_string}; correct = {self.is_correct}; score = {self.score}"

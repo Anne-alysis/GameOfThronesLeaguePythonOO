@@ -1,0 +1,6 @@
+raw_responses_file: "Fantasy Game of Thrones Responses.csv"
+correct_answer_file: "correct_answers.xlsx"
+results_file: "Results.csv"
+pdf_results_file: "Results.pdf"
+reshaped_response_file: "munged_responses.csv"
+answer_structure_file: "answer_structure.csv"
