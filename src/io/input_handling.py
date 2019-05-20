@@ -38,26 +38,30 @@ def read_raw_input(full_file_paths: Dict[str, str]) -> (List[t.Team], List[q.Que
     """
     raw_responses_df = pd.read_csv(full_file_paths['raw_responses_file']).drop(columns="Timestamp")
 
+    # extract a dictionary of question number keys to question text
     questions_dict = get_questions_mapping(raw_responses_df)
 
+    # use the above dictionary to standardize the raw response file, by renaming columns
     renamed_raw_response_df = rename_columns(raw_responses_df, questions_dict)
 
-    # populate the list of Teams
+    # populate the list of Team objects
     teams_class_list = [t.Team(renamed_raw_response_df.team_name[i],
                                renamed_raw_response_df.real_name[i],
                                renamed_raw_response_df.split_preference[i],
                                renamed_raw_response_df.pay_type[i], )
                         for i in range(renamed_raw_response_df.shape[0])]
 
+    # populate the list of Question objects with, number, text, and list of Response objects per question.
     questions_class_list = [q.Question(number, full_text, get_response_for_question(renamed_raw_response_df, number))
                             for number, full_text in questions_dict.items()]
 
-    write_answer_structure(full_file_paths["answer_structure_file"], questions_class_list)
+    # writes out the question structure to be filled in week-over-week with correct answers
+    write_question_structure(full_file_paths["answer_structure_file"], questions_class_list)
 
     return teams_class_list, questions_class_list
 
 
-def write_answer_structure(output_file_path: str, questions_class_list: List[q.Question]) -> None:
+def write_question_structure(output_file_path: str, questions_class_list: List[q.Question]) -> None:
     """
     Writes the questions with numbers to an external file for week-by-week updates, based on events.
 
