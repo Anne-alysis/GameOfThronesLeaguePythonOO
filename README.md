@@ -66,8 +66,8 @@ if the response is correct, and the point value to be used in summing up the tot
  
   
 
-## 'io' package 
-### 'input_handling.py' module 
+## `io` package 
+### `input_handling.py` module 
 
 This is a collection of methods to handle:
 * Reading in of the raw data.
@@ -76,7 +76,7 @@ This is a collection of methods to handle:
 * Reading in the correct answers.  
 * Populating the list of Question objects, including a list of Response objects (one per each team) for each question.
 
-### `output_handling.py' module 
+### `output_handling.py` module 
 Converts the final list of Teams into a DataFrame for ease of ranking and writing to an output CSV.   
  
 ## `calcuations` in the `calculations` package 
