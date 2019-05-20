@@ -10,6 +10,16 @@ of population this information throughout the class instances.
 
 def score_responses(correct_answer_dict: Dict[str, str], questions_class_list: List[q.Question],
                     team_class_list: List[t.Team]) -> List[t.Team]:
+    """
+    Returns updated Questions objects based on the correct responses.  Calculates the total score
+    for each team.
+
+    :param correct_answer_dict: dictionary of correct answers, where the key is the question number (e.g., "QXX")
+    :param questions_class_list: list of Question objects, which hold a list of Response objects
+    :param team_class_list: list of Team's initially without a total score
+    :return: an updated list of teams with total scores
+    """
+
     # populate the correct answers to the question instances
     [question.set_correct_answer(correct_answer_dict[question.question_number])
      for question in questions_class_list

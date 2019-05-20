@@ -9,6 +9,11 @@ directory_path = "resources"
 # set yaml path that includes specific file paths
 yaml_path = "file_paths.yaml"
 
+"""
+This script calculates the scores for a Game of Thrones league, based on events of the final season.  See 
+README for more details.  
+"""
+
 
 def main():
     week: int = 1 if len(sys.argv) == 1 else int(sys.argv[1])
@@ -19,7 +24,7 @@ def main():
 
     # read in all data, instantiate list of classes for teams and responses
     print("Reading in raw input")
-    team_class_list, questions_class_list = ih.read_raw_input(full_file_paths['raw_responses_file'])
+    team_class_list, questions_class_list = ih.read_raw_input(full_file_paths)
 
     print("Reading in correct answers...")
     correct_answer_dict = ih.read_correct_answers(full_file_paths['correct_answer_file'])
