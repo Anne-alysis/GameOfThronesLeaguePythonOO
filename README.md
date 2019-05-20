@@ -1,6 +1,8 @@
 # GameOfThronesLeaguePythonOO
-Python object oriented version of [original GameOfThronesLeague](https://github.com/Anne-alysis/GameOfThronesLeague) 
- and [Spark/Scala version](https://github.com/Anne-alysis/GameOfThronesLeagueSpark).  
+Python object-oriented version of [original GameOfThronesLeague](https://github.com/Anne-alysis/GameOfThronesLeague) 
+ and [Spark/Scala version](https://github.com/Anne-alysis/GameOfThronesLeagueSpark).  This version is slightly pared down, in that
+ it does not support plotting, does not bring in previous weeks' scores, and does not munge the hybrid question, that the
+ other repos do support (though the Spark one has no plotting either).  
 
 
 # Introduction
@@ -37,7 +39,7 @@ a character dies).
 
 Because this version of the code was written after the season was completed, the `week` input parameter is ignored.  
 
-`> python score.py ${week_value}`
+`> python main.py ${week_value}`
 
 # Code
 
