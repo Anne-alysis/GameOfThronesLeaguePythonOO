@@ -79,7 +79,7 @@ This is a collection of methods to handle:
 ### `output_handling.py` module 
 Converts the final list of Teams into a DataFrame for ease of ranking and writing to an output CSV.   
  
-## `calcuations` in the `calculations` package 
+## `calculations` in the `calculations` package 
 This module takes in the list of `Question` objects and the dictionary of correct answers and: 
 * Populates the correct answers per question .
 * Sets the boolean value for `is_correct` for each team/question combination.
