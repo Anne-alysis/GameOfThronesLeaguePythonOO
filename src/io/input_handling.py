@@ -98,7 +98,7 @@ def get_questions_mapping(df: pd.DataFrame) -> Dict[str, str]:
     :param df: raw data frame
     :return: dictionary mapping of numbers to text.
     """
-    question_number_range = list(range(0, df.shape[1] - 4))
+    question_number_range = list(range(df.shape[1] - 4))
     numbered_question_names = ['Q{:02d}'.format(i) for i in question_number_range]
     question_text = list(df.columns[4:])
 

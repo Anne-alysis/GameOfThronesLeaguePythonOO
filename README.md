@@ -23,23 +23,24 @@ At the end of the season, the top ranked team wins a prize and the Iron Throne.
 
 # General Code Structure
 
-This code will be run weekly and scores recalculated based on new information in each week's episode.  Week by 
-week the correct answers will be updated, and responses re-evaluated against changing information (e.g., 
-a character dies).
+This code runs at the end of the season and scores recalculated based on correct answers.  Other repos calculate 
+week-by-week, but this was constructed after the season concluded and is no longer necessary.  The base 
+path for all input and output files listed below is in `resources`. 
 
-0) Read in all file names from a yaml configuration file (`resources/file_paths.yaml`). 
-1) The code reads in the responses from a downloaded CSV (`resources/Fantasy Game of Thrones Responses.csv`)
+0) Read in all file names from a yaml configuration file (`file_paths.yaml`). 
+1) The code reads in the responses from a downloaded CSV (`Fantasy Game of Thrones Responses.csv`)
 2) Responses are reshaped to allow for ease of scoring
-3) Answers from a Excel sheet are read in (`resources/correct_answers.xlsx`)
+3) Answers from a Excel sheet are read in (`correct_answers.xlsx`)
 4) Scores are computed 
-5) Scores are written to a CSV (`resources/Results.csv`).  
+5) Scores are written to a CSV (`Results.csv`).  
 
 
 # Running the code
 
-Because this version of the code was written after the season was completed, the `week` input parameter is ignored.  
+Because this version of the code was written after the season was completed, the `week` parameter of the other repos
+has been eliminated for simplicity.
 
-`> python main.py ${week_value}`
+`> python main.py`
 
 # Code
 

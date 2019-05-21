@@ -30,5 +30,9 @@ class Team:
         return None
 
     def __str__(self):
-        return f"Team: {self.team_name}; teal name: {self.real_name}; " \
+        base_string = f"Team: {self.team_name}; team name: {self.real_name}; " \
             f"split preference: {self.split_preference}; pay type: {self.pay_type}"
+        if self.total_score == 0:
+            return base_string
+        else:
+            return f"{base_string}; total score: {self.total_score}"

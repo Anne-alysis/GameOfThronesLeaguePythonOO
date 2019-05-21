@@ -1,5 +1,3 @@
-import sys
-
 import src.calculations.calculations as calc
 import src.io.input_handling as ih
 import src.io.output_handling as oh
@@ -11,13 +9,12 @@ yaml_path = "file_paths.yaml"
 
 """
 This script calculates the scores for a Game of Thrones league, based on events of the final season.  See 
-README for more details.  
+README for more details.  This assumes the season is over and only calculates once (not week-over-week, 
+as in the other repos).
 """
 
 
 def main():
-    week: int = 1 if len(sys.argv) == 1 else int(sys.argv[1])
-    print(f"This is episode: {week}")
 
     print("Reading in configuration file paths... ")
     full_file_paths = ih.read_yaml(directory_path, yaml_path)
