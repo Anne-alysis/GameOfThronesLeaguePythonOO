@@ -29,7 +29,6 @@ class Response:
         """
         self.is_correct = self.response in correct_answer
         self.score = self.is_correct * points
-        return None
 
     def __str__(self):
         base_string = f"{self.team}'s response for question {self.question_number}: {self.response}"

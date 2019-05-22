@@ -21,6 +21,20 @@ class Question:
         self.list_of_responses = list_of_responses
         self.correct_answer = None
 
+    def set_correct_answer(self, answer: str):
+        """
+        Sets the correct answer for the given question.
+
+        :param answer: correct answer text
+        """
+        self.correct_answer = answer
+
+    def __iter__(self):
+        return iter([self.question_number, self.simple_text, self.points])
+
+    def __str__(self):
+        return f"{self.question_number}: {self.simple_text}; {self.points} points"
+
     def _get_points(self):
         """
         Extracts points values from the question's full text
@@ -43,18 +57,3 @@ class Question:
         character_to_save = f"[{self.full_text.split('[')[1]}" if "[" in self.full_text else ""
 
         return (self.full_text.split("(")[0] + character_to_save).strip()
-
-    def set_correct_answer(self, answer: str):
-        """
-        Sets the correct answer for the given question.
-
-        :param answer: correct answer text
-        """
-        self.correct_answer = answer
-        return None
-
-    def __iter__(self):
-        return iter([self.question_number, self.simple_text, self.points])
-
-    def __str__(self):
-        return f"{self.question_number}: {self.simple_text}; {self.points} points"

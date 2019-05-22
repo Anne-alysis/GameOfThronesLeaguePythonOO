@@ -27,7 +27,6 @@ class Team:
         :return: updated score
         """
         self.total_score += addition
-        return None
 
     def __str__(self):
         base_string = f"Team: {self.team_name}; team name: {self.real_name}; " \
