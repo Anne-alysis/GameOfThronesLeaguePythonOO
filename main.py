@@ -10,7 +10,7 @@ yaml_path = "file_paths.yaml"
 """
 This script calculates the scores for a Game of Thrones league, based on events of the final season.  See 
 README for more details.  This assumes the season is over and only calculates once (not week-over-week, 
-as in the other repos).
+as in the other repos).   
 """
 
 
